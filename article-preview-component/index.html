@@ -48,7 +48,11 @@
                         <h3 class="card__author">Michelle Appleton</h3>
                         <span class="card__date">28 Jun 2020</span>
                     </div>
-                    <button class="card__share-btn" onclick="toggleBanner()">
+                    <button
+                        aria-label="toggle social banner"
+                        class="card__share-btn"
+                        onclick="toggleBanner()"
+                    >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="15"
@@ -63,7 +67,11 @@
                     <div class="card__social-media-banner">
                         <div class="card__social-media">
                             <span>share</span>
-                            <a href="" class="card__social-link">
+                            <a
+                                href="/"
+                                class="card__social-link"
+                                aria-label="Facebook link"
+                            >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="20"
@@ -75,7 +83,11 @@
                                     />
                                 </svg>
                             </a>
-                            <a href="" class="card__social-link">
+                            <a
+                                href="/"
+                                class="card__social-link"
+                                aria-label="Twitter link"
+                            >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="20"
@@ -87,7 +99,11 @@
                                     />
                                 </svg>
                             </a>
-                            <a href="" class="card__social-link">
+                            <a
+                                href="/"
+                                class="card__social-link"
+                                aria-label="Pinterest link"
+                            >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="20"
@@ -101,6 +117,7 @@
                             </a>
                         </div>
                         <button
+                            aria-label="toggle social media banner"
                             class="card__share-btn card__share-btn--dark"
                             onclick="toggleBanner()"
                         >
