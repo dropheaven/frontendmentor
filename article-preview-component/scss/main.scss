@@ -1,0 +1,207 @@
+@import "preflight";
+
+$very-dark-blue: hsl(217, 19%, 35%);
+$dark-blue: hsl(214, 17%, 51%);
+$grayish-blue: hsl(212, 23%, 69%);
+$light-grayish-blue: hsl(210, 46%, 95%);
+$white: hsl(360, 100%, 100%);
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: $light-grayish-blue;
+}
+
+.card {
+    width: 90%;
+    max-width: 40rem;
+    margin: 5rem auto;
+    border-radius: 1rem;
+    background-color: $white;
+    font-size: 1.3rem;
+    overflow: hidden;
+
+    &__image {
+        height: 20rem;
+        width: 100%;
+        object-fit: cover;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+    }
+
+    &__body {
+        margin: 4rem 3rem 5rem;
+    }
+
+    &__title {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: $very-dark-blue;
+        margin-bottom: 1rem;
+    }
+
+    &__teaser {
+        line-height: 2rem;
+        color: $dark-blue;
+        font-weight: 300;
+    }
+
+    &__footer {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 0 3rem 2rem;
+    }
+
+    &__avatar {
+        height: 4rem;
+        border-radius: 2rem;
+        margin-right: 1.5rem;
+    }
+
+    &__publish-info {
+        flex: 1;
+    }
+
+    &__author {
+        font-weight: 600;
+        color: $very-dark-blue;
+    }
+
+    &__date {
+        color: $grayish-blue;
+    }
+
+    &__share-btn {
+        background-color: $light-grayish-blue;
+        padding: 1rem;
+        border-radius: 2rem;
+
+        &--dark {
+            background-color: $dark-blue;
+        }
+    }
+
+    &__social-media-banner {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 8rem;
+        left: 0;
+        width: 100%;
+        color: $white;
+        padding: 1.5rem 3rem;
+        background-color: $very-dark-blue;
+        transition-property: top;
+        transition-duration: 500ms;
+        transition-timing-function: ease-in-out;
+
+        & span {
+            font-size: 1.3rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0.5rem;
+            color: $grayish-blue;
+            margin-right: 0.5rem;
+        }
+    }
+
+    &__social-media {
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
+
+    &__social-link {
+        margin: 0 1rem;
+    }
+
+    &__show-banner {
+        top: 0;
+    }
+}
+
+.attribution {
+    text-align: center;
+    font-size: 1.2rem;
+
+    &__fm {
+        margin: 0.5rem 0;
+    }
+}
+
+// media queries
+@media (min-width: 768px) {
+    body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .card {
+        display: flex;
+        max-width: 75rem;
+        margin: 0 auto;
+
+        &__header {
+            width: 40%;
+        }
+
+        &__image {
+            height: 100%;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 1rem;
+        }
+
+        &__flex-container {
+            width: 60%;
+        }
+    }
+
+    .attribution {
+        margin-top: 5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .card {
+        overflow: visible;
+
+        &__social-media-banner {
+            top: -7rem;
+            left: auto;
+            right: -7rem;
+            width: 50%;
+            padding: 1.5rem 0;
+            border-radius: 1rem;
+            opacity: 0;
+            transition-property: opacity;
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 40%;
+                border-top: 1.5rem solid black;
+                border-top-color: $very-dark-blue;
+                border-left: 1.5rem solid transparent;
+                border-right: 1.5rem solid transparent;
+            }
+        }
+
+        &__social-media {
+            justify-content: center;
+        }
+
+        &__share-btn--dark {
+            display: none;
+        }
+
+        &__show-banner {
+            opacity: 100;
+        }
+    }
+}
